@@ -668,8 +668,8 @@ jobs:
             cd ./common
             wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch"
             wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android16-6.12.patch"
-            patch -p1 < 'ntsync_base.patch'
-            patch -p1 < 'ntsync_compat_android16-6.12.patch'            
+            patch -p1 --force < 'ntsync_base.patch'
+            patch -p1 --force < 'ntsync_compat_android16-6.12.patch'            
             cd ../
             #开启NTsync内核配置
             echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
